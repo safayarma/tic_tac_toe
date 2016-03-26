@@ -15,16 +15,16 @@ def print_board():
 
 
 def who_won_row():
-    someone_won = False
+    who_won = ' '
     for row in range(0, 3):
         if board[row][0] == board[row][1] == board[row][2]:
-            someone_won = True
+            who_won = board[row][0]
             break
 
-    print 'is there a winning row? ', someone_won
+    return who_won
 
 
-def did_any_column_win():
+def who_won_column():
     someone_won = False
     for column in range(0, 3):
         if board[0][column] == board[1][column] == board[2][column]:
@@ -61,7 +61,13 @@ def who_won_diagonal2():
 
     return who_won
 
-print_board()
+#def who_won():
 
-print '{} won.'.format( who_won_row())
-print '{} is learning from {}'.format('safayar',who_won_diagonal2())
+
+print_board()
+print 'who_won_row: {}'.format(who_won_row())
+print 'who_won_column: {}'.format(who_won_column())
+print 'who_won_diagonal: {}'.format(who_won_diagonal2())
+
+#print '{} won.'.format( who_won_row())
+#print '{} is learning from {}'.format('safayar',who_won_diagonal2())
