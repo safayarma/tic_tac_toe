@@ -31,7 +31,7 @@ def who_won_column():
             someone_won = True
             break
 
-    print 'is there a winning column? ', someone_won
+    return someone_won
 
 
 def who_won_diagonal():
