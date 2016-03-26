@@ -34,7 +34,17 @@ def who_won_column():
     print 'is there a winning column? ', someone_won
 
 
-def who_won_diagonal1():
+def who_won_diagonal():
+    who_won = ' '
+    if board[0][0] == board[1][1] == board[2][2]:
+        who_won = board[0][0]
+    elif board[0][2] == board[1][1] == board[2][0]:
+        who_won = board[0][2]
+
+    return who_won
+
+
+def who_won_diagonal_old():
     who_won = ' '
     if board[0][0] == board[1][1] == board[2][2] == 'x':
         who_won = board[0][0]
@@ -52,22 +62,10 @@ def who_won_diagonal1():
     return who_won
 
 
-def who_won_diagonal2():
-    who_won = ' '
-    if board[0][0] == board[1][1] == board[2][2]:
-        who_won = board[0][0]
-    elif board[0][2] == board[1][1] == board[2][0]:
-        who_won = board[0][2]
-
-    return who_won
-
-#def who_won():
-
-
 print_board()
 print 'who_won_row: {}'.format(who_won_row())
 print 'who_won_column: {}'.format(who_won_column())
-print 'who_won_diagonal: {}'.format(who_won_diagonal2())
+print 'who_won_diagonal: {}'.format(who_won_diagonal())
 
 #print '{} won.'.format( who_won_row())
 #print '{} is learning from {}'.format('safayar',who_won_diagonal2())
